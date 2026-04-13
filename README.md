@@ -18,18 +18,16 @@ Flutter ile geliştirilmiş, gerçek API entegrasyonlu modern bir e-ticaret kata
 - DummyJSON API
 
 ## Proje Klasör Yapısı
-lib/
-├── main.dart
-├── models/
-│   └── urun.dart
-├── screens/
-│   ├── splash_screen.dart
-│   ├── ana_ekran.dart
-│   ├── ana_sayfa.dart
-│   ├── detay_sayfasi.dart
-│   └── sepet_sayfasi.dart
-└── services/
-└── urun_servisi.dart
+| Dosya | Açıklama |
+|-------|----------|
+| `lib/main.dart` | Uygulamanın giriş noktası |
+| `lib/models/urun.dart` | Ürün veri modeli ve fromJson |
+| `lib/screens/splash_screen.dart` | Açılış animasyon ekranı |
+| `lib/screens/ana_ekran.dart` | Alt navigasyon bar yönetimi |
+| `lib/screens/ana_sayfa.dart` | Ürün listesi ve kategori filtreleme |
+| `lib/screens/detay_sayfasi.dart` | Ürün detay ekranı |
+| `lib/screens/sepet_sayfasi.dart` | Sepet ve ödeme ekranı |
+| `lib/services/urun_servisi.dart` | DummyJSON API entegrasyonu |
 
 ## Çalıştırma Adımları
 
