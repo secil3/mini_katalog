@@ -52,4 +52,8 @@ lib/
 ```
 
 ## Ekran Görüntüleri
-_(screenshots klasörüne bakınız)_
+<img width="407" height="719" alt="Screenshot 2026-04-13 at 13 52 42" src="https://github.com/user-attachments/assets/8c752205-f178-4c85-92ef-c8eff9636ea0" />
+<img width="407" height="719" alt="Screenshot 2026-04-13 at 13 51 55" src="https://github.com/user-attachments/assets/aa863c64-cc60-411a-9c6b-dd56c78971fc" />
+<img width="407" height="719" alt="Screenshot 2026-04-13 at 13 51 33" src="https://github.com/user-attachments/assets/02a06706-af14-46e7-bfaf-b74dcc1abbb1" />
+<img width="407" height="719" alt="Screenshot 2026-04-13 at 13 51 27" src="https://github.com/user-attachments/assets/bc445f36-6ca5-409c-b503-93ef66d5c616" />
+
