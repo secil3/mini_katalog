@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import '../models/urun.dart';
+import 'odeme_sayfasi.dart';
 
 class SepetSayfasi extends StatelessWidget {
   final List<Urun> sepet;
   final Function(int) sepettenCikar;
+  final VoidCallback sepetiTemizle;
 
-  const SepetSayfasi(
-      {super.key, required this.sepet, required this.sepettenCikar});
+  const SepetSayfasi({
+    super.key,
+    required this.sepet,
+    required this.sepettenCikar,
+    required this.sepetiTemizle,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +23,10 @@ class SepetSayfasi extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF6C63FF),
         foregroundColor: Colors.white,
-        title: const Text('Sepetim',
-            style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text(
+          'Sepetim',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         elevation: 0,
       ),
       body: sepet.isEmpty
@@ -26,18 +34,28 @@ class SepetSayfasi extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.shopping_cart_outlined,
-                      size: 90, color: Colors.grey),
+                  Icon(
+                    Icons.shopping_cart_outlined,
+                    size: 90,
+                    color: Colors.grey,
+                  ),
                   SizedBox(height: 16),
-                  Text('Sepetiniz boş',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w500)),
+                  Text(
+                    'Sepetiniz boş',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
                   SizedBox(height: 8),
-                  Text('Ürün eklemek için ana sayfaya gidin',
-                      style:
-                          TextStyle(fontSize: 14, color: Colors.grey)),
+                  Text(
+                    'Ürün eklemek için ana sayfaya gidin',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.grey,
+                    ),
+                  ),
                 ],
               ),
             )
@@ -49,6 +67,7 @@ class SepetSayfasi extends StatelessWidget {
                     itemCount: sepet.length,
                     itemBuilder: (context, index) {
                       final urun = sepet[index];
+
                       return Container(
                         margin: const EdgeInsets.only(bottom: 12),
                         decoration: BoxDecoration(
@@ -56,8 +75,10 @@ class SepetSayfasi extends StatelessWidget {
                           borderRadius: BorderRadius.circular(16),
                           boxShadow: [
                             BoxShadow(
-                                color: Colors.black.withOpacity(0.05),
-                                blurRadius: 8)
+                              color: Colors.black.withOpacity(0.05),
+                              blurRadius: 8,
+                              offset: const Offset(0, 3),
+                            ),
                           ],
                         ),
                         child: ListTile(
@@ -72,33 +93,49 @@ class SepetSayfasi extends StatelessWidget {
                                 urun.gorselUrl,
                                 fit: BoxFit.contain,
                                 errorBuilder: (_, __, ___) => Icon(
-                                    Icons.image_not_supported_outlined,
-                                    color: urun.renk),
+                                  Icons.image_not_supported_outlined,
+                                  color: urun.renk,
+                                ),
                               ),
                             ),
                           ),
-                          title: Text(urun.ad,
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14)),
-                          subtitle: Text(urun.marka,
+                          title: Text(
+                            urun.ad,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                            ),
+                          ),
+                          subtitle: Padding(
+                            padding: const EdgeInsets.only(top: 4),
+                            child: Text(
+                              urun.marka,
                               style: TextStyle(
-                                  color: Colors.grey.shade500,
-                                  fontSize: 12)),
+                                color: Colors.grey.shade500,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ),
                           trailing: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                  '₺${urun.fiyat.toStringAsFixed(0)}',
-                                  style: TextStyle(
-                                      color: urun.renk,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14)),
+                                '₺${urun.fiyat.toStringAsFixed(0)}',
+                                style: TextStyle(
+                                  color: urun.renk,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                ),
+                              ),
                               const SizedBox(width: 8),
                               GestureDetector(
                                 onTap: () => sepettenCikar(index),
-                                child: const Icon(Icons.delete_outline,
-                                    color: Colors.redAccent),
+                                child: const Icon(
+                                  Icons.delete_outline,
+                                  color: Colors.redAccent,
+                                ),
                               ),
                             ],
                           ),
@@ -111,10 +148,14 @@ class SepetSayfasi extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(20, 16, 20, 28),
                   decoration: const BoxDecoration(
                     color: Colors.white,
-                    borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(24)),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(24),
+                    ),
                     boxShadow: [
-                      BoxShadow(color: Colors.black12, blurRadius: 10)
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 10,
+                      ),
                     ],
                   ),
                   child: Column(
@@ -122,15 +163,21 @@ class SepetSayfasi extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('${sepet.length} ürün',
-                              style: TextStyle(
-                                  color: Colors.grey.shade500,
-                                  fontSize: 14)),
-                          Text('₺${toplam.toStringAsFixed(0)}',
-                              style: const TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFF6C63FF))),
+                          Text(
+                            '${sepet.length} ürün',
+                            style: TextStyle(
+                              color: Colors.grey.shade500,
+                              fontSize: 14,
+                            ),
+                          ),
+                          Text(
+                            '₺${toplam.toStringAsFixed(0)}',
+                            style: const TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF6C63FF),
+                            ),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 4),
@@ -139,35 +186,54 @@ class SepetSayfasi extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text('Toplam',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold)),
-                          Text('₺${toplam.toStringAsFixed(0)}',
-                              style: const TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFF6C63FF))),
+                          const Text(
+                            'Toplam',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            '₺${toplam.toStringAsFixed(0)}',
+                            style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF6C63FF),
+                            ),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => OdemeSayfasi(
+                                  sepet: List<Urun>.from(sepet),
+                                  sepetiTemizle: sepetiTemizle,
+                                ),
+                              ),
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF6C63FF),
                             foregroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 16),
+                            padding: const EdgeInsets.symmetric(vertical: 16),
                             shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.circular(16)),
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            elevation: 0,
                           ),
-                          child: const Text('Satın Al',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold)),
+                          child: const Text(
+                            'Satın Al',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ),
                     ],
