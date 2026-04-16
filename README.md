@@ -4,12 +4,14 @@
 Flutter ile geliştirilmiş, gerçek API entegrasyonlu modern bir e-ticaret katalog uygulaması. Kullanıcılar ürünleri kategorilere göre filtreleyebilir, ürün detaylarını görüntüleyebilir ve sepete ekleyebilir.
 
 ## Özellikler
-- 🛍️ Gerçek API'den ürün listeleme (DummyJSON)
-- 🔍 Ürün arama ve kategori filtreleme
-- 📱 Ürün detay sayfası
-- 🛒 Sepet sistemi
-- 💫 Splash screen animasyonu
-- 🎨 Modern UI tasarımı
+- <img width="407" height="719" alt="Screenshot 2026-04-15 at 14 31 41" src="https://github.com/user-attachments/assets/5f9cb44b-2f59-4220-9fc7-e0c27dee4398" />
+<img width="407" height="719" alt="Screenshot 2026-04-15 at 14 31 24" src="https://github.com/user-attachments/assets/6b1db315-dd51-4fb1-b20a-49dc3e0b22a1" />
+ Gerçek API'den ürün listeleme (DummyJSON)
+-  Ürün arama ve kategori filtreleme
+-  Ürün detay sayfası
+-  Sepet sistemi
+-  Splash screen animasyonu
+-  Modern UI tasarımı
 
 ## Kullanılan Teknolojiler
 - Flutter 3.41.6
