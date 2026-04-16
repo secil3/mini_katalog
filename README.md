@@ -4,9 +4,7 @@
 Flutter ile geliştirilmiş, gerçek API entegrasyonlu modern bir e-ticaret katalog uygulaması. Kullanıcılar ürünleri kategorilere göre filtreleyebilir, ürün detaylarını görüntüleyebilir ve sepete ekleyebilir.
 
 ## Özellikler
-- <img width="407" height="719" alt="Screenshot 2026-04-15 at 14 31 41" src="https://github.com/user-attachments/assets/5f9cb44b-2f59-4220-9fc7-e0c27dee4398" />
-<img width="407" height="719" alt="Screenshot 2026-04-15 at 14 31 24" src="https://github.com/user-attachments/assets/6b1db315-dd51-4fb1-b20a-49dc3e0b22a1" />
- Gerçek API'den ürün listeleme (DummyJSON)
+-  Gerçek API'den ürün listeleme (DummyJSON)
 -  Ürün arama ve kategori filtreleme
 -  Ürün detay sayfası
 -  Sepet sistemi
@@ -56,4 +54,5 @@ Flutter ile geliştirilmiş, gerçek API entegrasyonlu modern bir e-ticaret kata
 <img width="407" height="719" alt="Screenshot 2026-04-13 at 13 51 55" src="https://github.com/user-attachments/assets/aa863c64-cc60-411a-9c6b-dd56c78971fc" />
 <img width="407" height="719" alt="Screenshot 2026-04-13 at 13 51 33" src="https://github.com/user-attachments/assets/02a06706-af14-46e7-bfaf-b74dcc1abbb1" />
 <img width="407" height="719" alt="Screenshot 2026-04-13 at 13 51 27" src="https://github.com/user-attachments/assets/bc445f36-6ca5-409c-b503-93ef66d5c616" />
-
+<img width="407" height="719" alt="Screenshot 2026-04-15 at 14 31 41" src="https://github.com/user-attachments/assets/5f9cb44b-2f59-4220-9fc7-e0c27dee4398" />
+<img width="407" height="719" alt="Screenshot 2026-04-15 at 14 31 24" src="https://github.com/user-attachments/assets/6b1db315-dd51-4fb1-b20a-49dc3e0b22a1" />
